@@ -1,4 +1,119 @@
-<html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Introduction</title>
+  <meta name="description" content="Short introduction page for Your Name." />
+  <link rel="icon" href="data:,">
+  <style>
+    :root{
+      --bg: #0b0d10;
+      --card: #11151a;
+      --text: #e8eef5;
+      --muted:#99a6b5;
+      --accent:#4f8cff;
+      --ring:#4f8cff33;
+      --maxw: 880px;
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f7f9fc; --card:#ffffff; --text:#0f1320; --muted:#4b5565; --accent:#2f80ed; --ring:#2f80ed33; }
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text); background: radial-gradient(1200px 600px at 20% -10%, #2f80ed22, transparent),
+                           radial-gradient(900px 500px at 110% 10%, #6ee7b722, transparent),
+                           var(--bg);
+      min-height:100dvh; display:flex; align-items:center; justify-content:center; padding:32px;
+    }
+    .wrap{ width:100%; max-width:var(--maxw); }
+    .card{
+      background:var(--card); border:1px solid #ffffff11; border-radius:var(--radius);
+      box-shadow: 0 10px 35px #00000040, inset 0 1px 0 #ffffff08;
+      padding: clamp(20px, 5vw, 40px);
+    }
+    .tag{ display:inline-block; font-weight:600; color:var(--accent); background:#ffffff06;
+      border:1px solid #ffffff10; border-radius:999px; padding:6px 12px; }
+    h1{ font-size: clamp(28px, 4vw, 44px); line-height:1.15; margin:14px 0 8px; letter-spacing:0.2px; }
+    p.lead{ color:var(--muted); font-size: clamp(16px, 2.2vw, 19px); margin:0 0 22px; }
+    .grid{ display:grid; gap:14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top:22px; }
+    .item{
+      background:#ffffff06; border:1px solid #ffffff10; border-radius:16px; padding:16px;
+      transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+    }
+    .item:hover{ transform: translateY(-3px); border-color: var(--ring); box-shadow: 0 6px 20px #00000030;}
+    .k{ display:block; color:var(--muted); font-size:12px; margin-bottom:6px; }
+    .v{ font-weight:600; }
+    .links{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .btn{
+      display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px;
+      background: #ffffff08; border:1px solid #ffffff12; color:var(--text); text-decoration:none;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    .btn:hover{ transform: translateY(-2px); border-color: var(--ring); box-shadow: 0 6px 18px #00000030;}
+    .btn:focus{ outline: 3px solid var(--ring); outline-offset:2px; }
+    footer{ color:var(--muted); font-size:13px; margin-top:18px; text-align:center; }
+    .avatar{
+      width:72px; height:72px; border-radius:50%; border:2px solid #ffffff29; object-fit:cover;
+      box-shadow: 0 6px 20px #00000040;
+    }
+    .top{ display:flex; align-items:center; gap:16px; }
+    @media (max-width:520px){ .top{ flex-direction:column; align-items:flex-start; } }
+    /* Accessible skip link */
+    .skip{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .skip:focus{ position:fixed; left:16px; top:16px; width:auto; height:auto; padding:8px 12px; background:#000; color:#fff; z-index:9999; border-radius:10px; }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <main id="main" class="wrap">
+    <section class="card" aria-label="Introduction">
+      <div class="top">
+        <!-- replace src with your image or remove the img tag -->
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/0?v=4" alt="Your avatar" />
+        <div>
+          <span class="tag">👋 Hello, I’m <strong>Your Name</strong></span>
+          <h1>Building things at the edge of <em>EEG, sensing, and AI</em></h1>
+          <p class="lead">
+            Short intro goes here (2–3 lines). Mention what you do, what you’re exploring,
+            and what you’re looking for (e.g., collaborations, roles, projects).
+          </p>
+        </div>
+      </div>
 
-<h1> this is a web </h1>
+      <div class="grid" role="list">
+        <div class="item" role="listitem">
+          <span class="k">Current role</span>
+          <span class="v">PhD • Biomedical Engineering</span>
+        </div>
+        <div class="item" role="listitem">
+          <span class="k">Interests</span>
+          <span class="v">EEG, mmWave/RFID sensing, neuroadaptive learning</span>
+        </div>
+        <div class="item" role="listitem">
+          <span class="k">Location</span>
+          <span class="v">Singapore / Beijing</span>
+        </div>
+        <div class="item" role="listitem">
+          <span class="k">Email</span>
+          <span class="v"><a href="mailto:you@example.com">you@example.com</a></span>
+        </div>
+      </div>
+
+      <div class="links" aria-label="Links">
+        <a class="btn" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="resume.pdf">Résumé</a>
+        <a class="btn" href="mailto:you@example.com">Contact</a>
+      </div>
+
+      <footer>© <span id="y"></span> Your Name • Built with GitHub Pages</footer>
+    </section>
+  </main>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
